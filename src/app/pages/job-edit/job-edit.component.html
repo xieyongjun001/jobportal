@@ -1,0 +1,42 @@
+<div class="container mt-4">
+    <h1 class="mb-4"> Edit Job</h1>
+  
+    <form #f="ngForm" (ngSubmit)="onFormSubmit(f)">
+        <!-- <pre> {{ f.value | json }} </pre> -->
+      <div class="mb-3">
+        <label class="form-label">Job Title</label>
+        <input required name="title" #title="ngModel" [ngClass]="{'is-invalid': !title.valid && title.touched}"
+          ngModel type="text" class="form-control" placeholder="Product Title" [(ngModel)]="updatedItem.title">
+        <div *ngIf="!title.valid && title.touched" class="text-danger"> This field is required</div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Job Description</label>
+        <textarea required #description="ngModel" [ngClass]="{'is-invalid': !description.valid && description.touched}"
+          name="description" ngModel type="text" class="form-control" rows="10" placeholder="Product Description" [(ngModel)]="updatedItem.description"></textarea>
+        <div *ngIf="!description.valid && description.touched" class="text-danger"> Description is required</div>
+      </div>
+  
+      
+  
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select name="type" [ngClass]="{'is-invalid': !type.valid && type.touched}" #type="ngModel"
+          ngModel required class="form-select" [(ngModel)]="updatedItem.type">
+          <option selected>Select</option>
+          <option *ngFor="let name of enumKeys" [value]="name"> {{name}} </option>
+
+        </select>
+        <div *ngIf="!type.valid && type.touched" class="text-danger fs-6 fst-italic">
+          Please provide a category
+        </div>
+      </div>
+  
+  
+      <div class="mb-3">
+        <button [disabled]="!f.valid" type="submit" class="btn btn-primary mb-3">Save</button>
+      </div>
+    </form>
+
+  </div>
+  

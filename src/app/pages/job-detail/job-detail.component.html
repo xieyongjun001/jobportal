@@ -1,0 +1,29 @@
+<div class="container mt-4">
+    <!-- <pre> {{ currentJob$ | async | json }} </pre> -->
+    <div *ngIf="(currentJob$ | async ) as currentJob" class="card text-left">
+  
+      <div class="card-header">
+        <h1 class="mb-4"> {{ currentJob.title }} </h1>
+      </div>
+      <div class="card-body">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body">
+                <p class="card-text"> Category: <b>{{ currentJob.type }}</b></p>
+                <p class="card-text" [innerHTML]="currentJob.description | newlineToBr"> </p>
+               
+               
+          
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-dark" (click)="goBack()">Back</button>
+
+      </div>
+  
+     
+    </div>
+  </div>
+  

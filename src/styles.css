@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html,
+body {
+  min-height: 100vh;
+}
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.appMain {
+  flex-grow: 1;
+}
+
+.boxShadow {
+  -webkit-box-shadow: 7px 4px 17px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 4px 17px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 4px 17px 0px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}

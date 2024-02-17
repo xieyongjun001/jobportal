@@ -1,0 +1,13 @@
+<div appHover class="card">
+    <ul class="list-group list-group-flush">
+      <li appHighlight [highlightColor]="'green'" class="list-group-item">Title: {{ job.title}}</li>
+      <li class="list-group-item">Type: {{ job.type}}
+      </li>
+    </ul>
+    <div class="card-body">
+      <a [routerLink]="['/job', job.id]" class="btn btn-dark">Detail</a> | 
+      <a [routerLink]="['/job/edit/', job.id]" class="btn btn-primary ">Edit</a>
+      <button (click)="confirmDeleteItem()" class="btn-danger ms-3 btn">Delete</button>
+    </div>
+  </div>
+  
